@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="NewBee-7&#39;s personal blog">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="NewBee">
+    
+
+    <title>Hi-NewBee</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/github.min.css">
+    <script src="/js/highlight.min.js"></script>
+</head>
+
+<body>
+
+<!-- About -->
+<div id="modal-overlay"> 
+    <div class="modal-data">
+    <div id="about-title"><h1>About me</h1><p>点击<a onclick="overlay()" href="#">这里</a>关闭</p></div>	
+        <div class="about">	
+            <div id="image"></div>
+            <table>
+                <tbody>
+                    <tr><td><span>English Name: </span></td> <td>NewBee</td></tr>
+                    <tr><td><span>Chinese Name: </span></td> <td>刘芝琦</td></tr>
+                    <tr><td><span>Birthday: </span></td> <td>1997.7.11</td></tr>
+                    <tr><td><span>Living trlace: </span> </td><td>ChongQing</td></tr>
+                    <tr><td><span>Interests: </span></td> <td>AI，Web，Game，Animation</td></tr>
+                    <tr><td><span>Skills: </span></td><td>HTML5/CSS/JavaScript &nbsp; C/C++/PHP/JAVA &nbsp; Linux &nbsp; SQL</td> </tr>
+                    <tr><td><span>Work Extrerience: </span> </td> <td>CFC. &nbsp;&nbsp;  Member  &nbsp;&nbsp;  2015.12-</td></tr>
+                    <tr><td><span>Education Extrerience: </span> </td> <td>Chongqing University of Technology. &nbsp; 2015-</td></tr>
+                    <tr><td><span>Remarks: </span> </td> <td>The first stetr is as good as half over.</td></tr>
+                    <tr><td><span>Contacts: </span> </td><td>Email:  392285478@qq.com</td> </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="about">
+            <div id="friend-link">
+                <h3>友情链接:</h3>
+                <a href="http://crazyforcode.org" target="_blank">CFC</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header -->
+<header>
+    <div id="logo">
+        <a href="#" onclick="overlay()">NEWBEE</a>
+    </div>
+
+    <div id="menu"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/archives">文章目录</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <div class="footer">
+        <ul class="social">
+            
+                <li><a href="https://twitter.com/NewBee_77" class="twitter" target="_blank" data-title="Twitter"></a></li>
+            
+            
+                <li><a href="https://plus.google.com/108046823108779936531" class="google" target="_blank" data-title="Google+"></a></li>
+            
+            
+                <li><a href="https://www.facebook.com/bee.new.1428" class="fb" target="_blank" data-title="Facebook"></a></li>
+            
+        </ul>
+
+        <div class="rights">
+            <p>版权所有 © NewBee.</p>
+        </div>
+    </div >
+</header>
+
+<!-- Main Content -->
+<section class="main">
+   <section class="content-header" style="background: url('/image/head.jpg');">
+       <div class="top">
+        <div class="button">
+    <ul>
+        
+        <li><a href="/2016/09/27/creat-a-hexo-theme/" class="previous" data-title="创造一个属于自己的Hexo主题"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a class="next disabled"></a></li>
+        
+    </ul>
+</div>
+        <h1 class="title">Hello World</h1>
+       </div>
+   </section>
+   <section class="content">
+   <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+   <div class="button">
+    <ul>
+        
+        <li><a href="/2016/09/27/creat-a-hexo-theme/" class="previous" data-title="创造一个属于自己的Hexo主题"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a class="next disabled"></a></li>
+        
+    </ul>
+</div>
+   </section>
+</section>
+
+<!-- After footer scripts -->
+<script type="text/javascript" src="/js/about.js"></script>
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+
+</html>

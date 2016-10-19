@@ -1,0 +1,429 @@
+@font-face{
+    font-family: 'title';
+    src: url('../font/raleway-semibold.ttf'),
+         url('../font/raleway-semibold.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'content';
+    src: url('../font/raleway-regular.ttf'),
+         url('../font/raleway-regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Generous CSS*/
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    z-index: 0;
+}
+a{
+    text-decoration: none;
+}
+/*Header*/
+header{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    min-height: 100%;
+    padding: 0 0 0 50px;
+    background: #ffffff; 
+    float: left;
+    overflow: hidden;
+    z-index: 1000;
+}
+#logo{
+    margin-top: 100px;
+    font-family: 'title';
+}
+#logo a{
+    text-decoration: none;
+    color: #454545;
+    font-size: 2em;
+}
+#logo a:hover {
+    text-decoration: none;
+    color: #969595;
+    font-size: 2em;
+}
+header nav ul{
+    display: block;
+    overflow: hidden;
+    margin-top: 100px;
+    list-style: none;
+    padding: initial;
+}
+header nav ul li{
+    display: block;
+    margin-bottom: 30px;
+}
+header nav ul li a{
+    color: #454545;
+    font-family: "content", arial;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+header nav ul li a:hover,
+header nav ul li a.selected{
+    color: #969595;
+}
+header .footer{
+    font-family: "content", arial;
+    position: absolute;
+    bottom: 50px;
+    color: #454545;
+}
+header .social li{
+    float: left;
+}
+header ul{
+    list-style: none;
+    padding: 0;
+}
+header ul.social li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('../image/sm.png') no-repeat;
+    background-position: 0 0;
+}
+header ul.social li a:hover{
+    background: url('../image/sm_hover.png') no-repeat;
+}
+header ul.social li a.fb,
+header ul.social li a.fb:hover{
+    background-position: 0 0;
+}
+header ul.social li a.google,
+header ul.social li a.google:hover{
+    background-position: -31px 0;
+}
+
+header ul.social li a.behance,
+header ul.social li a.behance:hover{
+    background-position: -62px 0;
+}
+
+header ul.social li a.twitter,
+header ul.social li a.twitter:hover{
+    background-position: -93px 0;
+}
+
+header ul.social li a.dribble,
+header ul.social li a.dribble:hover{
+    background-position: -124px 0;
+}
+
+header ul.social li a.rss,
+header ul.social li a.rss:hover{
+    background-position: -155px 0;
+}
+header .rights{
+    margin-top: 80px;
+}
+header .rights p{
+    color: #454545;
+    font-family: "raleway-regular", arial;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 18px;
+}
+/*Main*/
+.main{
+    width: 100%;
+    height: 100%;
+    padding-left: 300px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 55;
+    background: #f6f6f6;
+    clear: both;
+    min-height: 100vh;
+}
+.main .work{
+    display: block;
+    width: 33.33333333%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    font-family: 'title', arial;
+}
+.main .pagination-container{
+    display: block;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+.main .pagination {
+    display: inline-block;
+    font-family: 'title';
+    width: auto;
+    height: auto;
+    letter-spacing: .01em;
+    cursor: pointer;
+    margin: 0 4px 7px 0;
+    color: #454545!important;
+    padding: 7px 15px;
+    margin-top: 17px;
+}
+.main .pagination:hover{
+    color: #969595!important;
+}
+
+.main .pagination a{
+    text-decoration: none;
+}
+.main .pagination a:hover{
+    color: #969595;
+}
+.main .work .media{
+    width: 100%;
+    vertical-align: middle;
+}
+.main .work .caption{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    background: #ffffff;
+    opacity: 0;
+}
+.main .work a:hover .caption{
+    opacity: 1;
+}
+.work .caption .work_title{
+    display: block;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    margin-top: -40px;
+}
+.main .work .caption h1{
+    position: relative;
+    display: inline-block;
+    max-width: 90%;
+    padding: 20px 0;
+    z-index: 77;
+    color: #454545;
+    font-family: "content", arial;
+    font-size: 16px;
+    letter-spacing: .5px;
+    border-bottom: 1px solid #bfbbbb;
+    border-top: 1px solid #bfbbbb;
+}
+/*Archives*/
+.wrapper {
+    width: 92.72727272727273%;
+    margin: 0 auto;
+}
+.archives {
+    color: #4b4848;
+    font-family: 'content', arial;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 60px 30px;
+    background: #fff;
+    margin-bottom: 70px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.archives a{
+    color: #454545;
+}
+.archives a:hover{
+    color: #969595;
+
+}
+.archives ul li{
+    padding-bottom: 30px;
+    list-style-type: armenian;
+}
+.date{
+    font-size: 15px;
+    padding-left: 20px;
+}
+/*Content-Header*/
+.content-header{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    background-position: 50% 50% !important;
+}
+.top{
+    display: block;
+    width: 90%;  
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -45%;
+}
+.top .title{
+    padding: 0;
+    margin: 40px 0 0 0;
+    color: #4b4848;
+    font-family: 'title', arial;
+    font-size: 26px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, .7);
+    padding: 20px;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+.button{
+    list-style: none;
+    text-decoration: none;
+    float: right;
+    position: relative;
+}
+.button a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../image/p_navigation.png) no-repeat;
+}
+.button a.previous{
+    background-position: 0 0;
+}
+
+.button a.previous.disabled{
+    cursor: no-drop;
+}
+
+.button a.grid{
+    background-position: -41px 0;
+}
+
+.button a.next{
+    background-position: -82px 0;
+}
+
+.button a.next.disabled{
+    cursor: no-drop;
+}
+.button ul{
+    display: block;
+    float: left;
+    margin: 0 0 1px 1px;
+    padding: 0;
+    position: relative;
+}
+.button ul li{
+    display: block;
+    float: left;
+    margin: 0 0 1px 1px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+/*Content*/
+.content{
+    color: #4b4848;
+    font-family: 'content', arial;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 60px 30px;
+    background: #fff;
+    margin-bottom: 70px;
+    width: 86.3%;
+    margin: 0 auto;
+}
+.content figure{
+    background-color: #f3f3f3;
+}
+.content td{
+    padding-left: 30px;
+}
+.content a{
+    background-color: #bfbfbf;
+    color: #fff;
+}
+.content a:hover{
+    background-color: #f3f3f3;
+    color: #4b4848;
+}
+ /* 定义模态对话框外面的覆盖层样式 */
+#modal-overlay {
+    visibility: hidden;    
+    position: absolute;   /* 使用绝对定位或固定定位  */
+    left: 0px;    
+    top: 0px;
+    margin: 0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 9999;
+    background-color: #333; 
+    opacity: 0.9;   /* 背景半透明 */
+}
+/* 模态框样式 */
+.modal-data{
+    width:60%;
+    height: 60%;
+    margin: 100px auto;
+    font-family: 'content';
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px 0;
+    text-align:center;
+    overflow: auto;
+}
+.modal-data table{
+    margin: 0 auto;
+    padding-top: 62px;
+}
+.modal-data td{
+    text-align: left;   
+}
+.modal-data span{
+    font-family: 'title';
+    font-size: 20px;
+}
+#about-title h1, p{
+    margin: 0;
+}
+#image{
+    float: left;
+    background-image: url('/image/about.jpg');
+    background-position: 0;
+    height: 450px;
+    width: 30%;
+}
+#friend-link{
+    padding-left: 360px;
+}
+#friend-link h3{
+    text-align: left;
+    margin: 80px 0 20px 0;
+}
+#friend-link a{
+    float: left;
+    background-color: #eee;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #888;
+}
+#friend-link a:hover{
+    background-color: #888;
+    color: #eee;
+}
