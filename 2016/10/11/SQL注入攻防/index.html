@@ -116,8 +116,8 @@
        </div>
    </section>
    <section class="content">
-   <p>最近上线一个团队网站，我是用php写的后台，最开始的时候没有关于SQL注入的深度认知，结果在团队学长测试的时候被成功注入了……2333，所以最近就学习了SQL注入的相关内容。</p>
-<h2 id="什么是SQL注入"><a href="#什么是SQL注入" class="headerlink" title="什么是SQL注入"></a>什么是SQL注入</h2><p>所谓SQL注入式攻击，就是攻击者把SQL命令插入到Web表单的输入域或页面请求的查询字符串，欺骗服务器执行恶意的SQL命令。在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。</p>
+   <p>&emsp;&emsp;最近上线一个团队网站，我是用php写的后台，最开始的时候没有关于SQL注入的深度认知，结果在团队学长测试的时候被成功注入了……2333，所以最近就学习了SQL注入的相关内容。</p>
+<h2 id="什么是SQL注入"><a href="#什么是SQL注入" class="headerlink" title="什么是SQL注入"></a>什么是SQL注入</h2><p>&emsp;&emsp;所谓SQL注入式攻击，就是攻击者把SQL命令插入到Web表单的输入域或页面请求的查询字符串，欺骗服务器执行恶意的SQL命令。在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。</p>
 <h2 id="如何SQL注入"><a href="#如何SQL注入" class="headerlink" title="如何SQL注入"></a>如何SQL注入</h2><h3 id="一个简单的登录页面"><a href="#一个简单的登录页面" class="headerlink" title="一个简单的登录页面"></a>一个简单的登录页面</h3><h4 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h4><pre><code class="php">$password = $_POST[&#39;password&#39;]; //admin
 $username = $_POST[&#39;username&#39;]; //123456
 $query = &#39;select * from pw where username = &#39;{$username}&#39; and password = &#39;{$password}&#39;&#39;;
@@ -129,22 +129,21 @@ if(mysqli_num_rows($result) == 1){
     return;
 }
 </code></pre>
-<h4 id="1-正常输入数据"><a href="#1-正常输入数据" class="headerlink" title="1) 正常输入数据"></a>1) 正常输入数据</h4><p>同时输入”admin”和”123456”，才能登陆成功。</p>
-<h4 id="2-简单的SQL注入方式输入"><a href="#2-简单的SQL注入方式输入" class="headerlink" title="2) 简单的SQL注入方式输入"></a>2) 简单的SQL注入方式输入</h4><p>输入”admin’–”和任意的一串密码(或者不输密码)</p>
+<h4 id="1-正常输入数据"><a href="#1-正常输入数据" class="headerlink" title="1) 正常输入数据"></a>1) 正常输入数据</h4><p>&emsp;&emsp;同时输入”admin”和”123456”，才能登陆成功。</p>
+<h4 id="2-简单的SQL注入方式输入"><a href="#2-简单的SQL注入方式输入" class="headerlink" title="2) 简单的SQL注入方式输入"></a>2) 简单的SQL注入方式输入</h4><p>&emsp;&emsp;输入”admin’–”和任意的一串密码(或者不输密码)</p>
 <pre><code class="php">select * from pw where username = &#39;admin&#39; -- and password = &#39;123&#39;;
 </code></pre>
-<p>这里的”–”会注释掉后面的代码，所以登陆也会成功!</p>
-<p>在这里我就不举例所有的SQL注入攻击方式了,有兴趣可以看看 <a href="http://www.cnblogs.com/heyuquan/archive/2012/10/31/2748577.html" target="_blank" rel="external">这里</a></p>
-<h2 id="防止SQL注入"><a href="#防止SQL注入" class="headerlink" title="防止SQL注入"></a>防止SQL注入</h2><p>其实说来防止SQL注入的方式也不难，官方文档给出了一个方法 <a href="http://php.net/manual/zh/mysqli.real-escape-string.php" target="_blank" rel="external">mysqli_real_escape_string</a> ，作用是将敏感字符转义.但是最尴尬的是，这个函数仍无法完全防止SQL注入。</p>
-<p>所以我们有必要使用参数化模式来构造sql语句。<br>比如上例中，sql语句应该改为:</p>
+<p>&emsp;&emsp;这里的”–”会注释掉后面的代码，所以登陆也会成功!</p>
+<p>&emsp;&emsp;在这里我就不举例所有的SQL注入攻击方式了,有兴趣可以看看 <a href="http://www.cnblogs.com/heyuquan/archive/2012/10/31/2748577.html" target="_blank" rel="external">这里</a></p>
+<h2 id="防止SQL注入"><a href="#防止SQL注入" class="headerlink" title="防止SQL注入"></a>防止SQL注入</h2><p>&emsp;&emsp;其实说来防止SQL注入的方式也不难，官方文档给出了一个方法 <a href="http://php.net/manual/zh/mysqli.real-escape-string.php" target="_blank" rel="external">mysqli_real_escape_string</a> ，作用是将敏感字符转义.但是最尴尬的是，这个函数仍无法完全防止SQL注入。</p>
+<p>&emsp;&emsp;所以我们有必要使用参数化模式来构造sql语句。比如上例中，sql语句应该改为:</p>
 <pre><code class="php">$mysqli = new mysqli(&#39;localhost&#39;,&#39;数据库用户&#39;,&#39;数据库密码&#39;,&#39;数据库名称&#39;);
 $mysqli-&gt;set_charset(&#39;utf8&#39;);
 $sql = &quot;select * from pw where username = ? and password = ?&quot;;
 $stmt = $mysqli-&gt;prepare($sql);
 $stmt-&gt;bind_param(&#39;ss&#39;,$_POST[&#39;username&#39;],$_POST[&#39;password&#39;]);
 </code></pre>
-<p>如此来动态构造sql语句，就能有效地防止SQL注入，这个方法叫做mysqli。</p>
-<p>还有一种PDO方式，我还没有使用过，在这我贴一下简例:</p>
+<p>如此来动态构造sql语句，就能有效地防止SQL注入，这个方法叫做mysqli。<br>&emsp;&emsp;<br>&emsp;&emsp;还有一种PDO方式，我还没有使用过，在这我贴一下简例:</p>
 <pre><code class="php">$stmt  =  $dbh -&gt; prepare ( &quot;INSERT INTO REGISTRY (name, value) VALUES (:name, :value)&quot; );
 $stmt -&gt; bindParam ( &#39;:name&#39; ,  $name );
 $stmt -&gt; bindParam ( &#39;:value&#39; ,  $value );
@@ -152,7 +151,8 @@ $name  =  &#39;one&#39; ;
 $value  =  1 ;
 $stmt -&gt; execute ();
 </code></pre>
-<p>综上所诉，SQL注入很基础，却又有很大的风险，但其实任何开发中，参数化语句都十分常用，所以在编写sql语句时也应如此，就能避免风险!</p>
+<p>&emsp;&emsp;</p>
+<p>&emsp;&emsp;综上所诉，SQL注入很基础，却又有很大的风险，但其实任何开发中，参数化语句都十分常用，所以在编写sql语句时也应如此，就能避免风险!</p>
 
    <div class="button">
     <ul>
